@@ -10,17 +10,47 @@ services:
         image: containrrr/watchtower
         command: '--label-enable --cleanup --interval 3600'
     
-    warrior:
-        container_name: 'warrior'
+    warrior1:
+        container_name: 'warrior1'
         restart: unless-stopped
         stop_signal: SIGINT
         stop_grace_period: 5m
         environment:
             DOWNLOADER: St0ner1995
             SELECTED_PROJECT: auto
-            CONCURRENT_ITEMS: 3
+            CONCURRENT_ITEMS: 4
         labels:
             - com.centurylinklabs.watchtower.enable=true
         ports:
             - '8001:8001'
+        image: atdr.meo.ws/archiveteam/warrior-dockerfile
+        
+    warrior2:
+        container_name: 'warrior2'
+        restart: unless-stopped
+        stop_signal: SIGINT
+        stop_grace_period: 5m
+        environment:
+            DOWNLOADER: St0ner1995
+            SELECTED_PROJECT: auto
+            CONCURRENT_ITEMS: 4
+        labels:
+            - com.centurylinklabs.watchtower.enable=true
+        ports:
+            - '8002:8001'
+        image: atdr.meo.ws/archiveteam/warrior-dockerfile
+        
+    warrior3:
+        container_name: 'warrior3'
+        restart: unless-stopped
+        stop_signal: SIGINT
+        stop_grace_period: 5m
+        environment:
+            DOWNLOADER: St0ner1995
+            SELECTED_PROJECT: auto
+            CONCURRENT_ITEMS: 4
+        labels:
+            - com.centurylinklabs.watchtower.enable=true
+        ports:
+            - '8003:8001'
         image: atdr.meo.ws/archiveteam/warrior-dockerfile
