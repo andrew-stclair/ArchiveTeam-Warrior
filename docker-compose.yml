@@ -15,10 +15,9 @@ services:
         restart: unless-stopped
         stop_signal: SIGINT
         stop_grace_period: 5m
+        env_file: warrior.env
         environment:
-            DOWNLOADER: St0ner1995
             SELECTED_PROJECT: auto
-            CONCURRENT_ITEMS: 4
         labels:
             - com.centurylinklabs.watchtower.enable=true
         ports:
@@ -30,10 +29,9 @@ services:
         restart: unless-stopped
         stop_signal: SIGINT
         stop_grace_period: 5m
+        env_file: warrior.env
         environment:
-            DOWNLOADER: St0ner1995
             SELECTED_PROJECT: auto
-            CONCURRENT_ITEMS: 4
         labels:
             - com.centurylinklabs.watchtower.enable=true
         ports:
@@ -45,12 +43,53 @@ services:
         restart: unless-stopped
         stop_signal: SIGINT
         stop_grace_period: 5m
+        env_file: warrior.env
         environment:
-            DOWNLOADER: St0ner1995
             SELECTED_PROJECT: auto
-            CONCURRENT_ITEMS: 4
         labels:
             - com.centurylinklabs.watchtower.enable=true
         ports:
             - '8003:8001'
+        image: atdr.meo.ws/archiveteam/warrior-dockerfile
+        
+    warrior4:
+        container_name: 'warrior4'
+        restart: unless-stopped
+        stop_signal: SIGINT
+        stop_grace_period: 5m
+        env_file: warrior.env
+        environment:
+            SELECTED_PROJECT: auto
+        labels:
+            - com.centurylinklabs.watchtower.enable=true
+        ports:
+            - '8004:8001'
+        image: atdr.meo.ws/archiveteam/warrior-dockerfile
+    
+    warrior5:
+        container_name: 'warrior5'
+        restart: unless-stopped
+        stop_signal: SIGINT
+        stop_grace_period: 5m
+        env_file: warrior.env
+        environment:
+            SELECTED_PROJECT: auto
+        labels:
+            - com.centurylinklabs.watchtower.enable=true
+        ports:
+            - '8005:8001'
+        image: atdr.meo.ws/archiveteam/warrior-dockerfile
+    
+    warrior6:
+        container_name: 'warrior6'
+        restart: unless-stopped
+        stop_signal: SIGINT
+        stop_grace_period: 5m
+        env_file: warrior.env
+        environment:
+            SELECTED_PROJECT: auto
+        labels:
+            - com.centurylinklabs.watchtower.enable=true
+        ports:
+            - '8006:8001'
         image: atdr.meo.ws/archiveteam/warrior-dockerfile
