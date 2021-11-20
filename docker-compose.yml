@@ -1,7 +1,7 @@
 version: "3.3"
 services:
     watchtower:
-        container_name: watchtower
+        container_name: at-watchtower
         restart: unless-stopped
         labels:
             - com.centurylinklabs.watchtower.enable=true
@@ -12,7 +12,7 @@ services:
         command: '--label-enable --cleanup --interval 3600'
     
     warrior1:
-        container_name: 'warrior1'
+        container_name: 'at-warrior1'
         restart: unless-stopped
         stop_signal: SIGINT
         stop_grace_period: 5m
@@ -27,7 +27,7 @@ services:
         image: atdr.meo.ws/archiveteam/warrior-dockerfile
         
     warrior2:
-        container_name: 'warrior2'
+        container_name: 'at-warrior2'
         restart: unless-stopped
         stop_signal: SIGINT
         stop_grace_period: 5m
@@ -42,7 +42,7 @@ services:
         image: atdr.meo.ws/archiveteam/warrior-dockerfile
         
     warrior3:
-        container_name: 'warrior3'
+        container_name: 'at-warrior3'
         restart: unless-stopped
         stop_signal: SIGINT
         stop_grace_period: 5m
@@ -57,7 +57,7 @@ services:
         image: atdr.meo.ws/archiveteam/warrior-dockerfile
         
     warrior4:
-        container_name: 'warrior4'
+        container_name: 'at-warrior4'
         restart: unless-stopped
         stop_signal: SIGINT
         stop_grace_period: 5m
